@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plataforma de Imágenes</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Galería con NanoGallery2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css">
 </head>
 <body>
-    <h1>Subir y Mostrar Imágenes</h1>
+    <h1>Galería de Imágenes</h1>
+
     <form id="uploadForm">
         <input type="file" id="imageInput" name="image" accept="image/*">
         <button type="submit">Subir Imagen</button>
     </form>
-    <h2>Imágenes Aleatorias</h2>
-    <div id="imageGallery"></div>
 
+    <div id="nanogallery2"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
