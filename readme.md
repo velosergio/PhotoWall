@@ -1,5 +1,7 @@
 # PhotoWall | Mango Morado
 
+ver 0.0.5
+
 PhotoWall es una aplicación web que permite a los usuarios subir y mostrar imágenes en una galería interactiva y dinámica utilizando NanoGallery2. La galería se presenta en un diseño tipo mosaico y cuenta con un botón flotante para facilitar la subida de nuevas imágenes.
 
 ## Características

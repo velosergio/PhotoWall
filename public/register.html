@@ -2,21 +2,64 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registro</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="PhotoWall - Register">
+    <meta name="author" content="Mango Morado">
+    <title>PhotoWall - Register</title>
+    <link rel="stylesheet" href="/node_modules/@coreui/coreui/dist/css/coreui.min.css">
 </head>
 <body>
-    <form action="/register" method="post">
-        <div>
-            <label>Usuario:</label>
-            <input type="text" name="username" required>
+    <div class="bg-body-tertiary min-vh-100 d-flex flex-row align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card mb-4 mx-4">
+                        <div class="card-body p-4">
+                            <h1>Regístrate</h1>
+                            <p class="text-body-secondary">Crea tu cuenta</p>
+                            <form action="/register" method="post">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">
+                                        <svg class="icon">
+                                            <use xlink:href="/node_modules/@coreui/icons/sprites/free.svg#cil-user"></use>
+                                        </svg>
+                                    </span>
+                                    <input class="form-control" type="text" name="username" placeholder="Usuario" required>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">
+                                        <svg class="icon">
+                                            <use xlink:href="/node_modules/@coreui/icons/sprites/free.svg#cil-envelope-open"></use>
+                                        </svg>
+                                    </span>
+                                    <input class="form-control" type="email" name="email" placeholder="Correo Electrónico" required>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">
+                                        <svg class="icon">
+                                            <use xlink:href="/node_modules/@coreui/icons/sprites/free.svg#cil-lock-locked"></use>
+                                        </svg>
+                                    </span>
+                                    <input class="form-control" type="password" name="password" placeholder="Contraseña" required>
+                                </div>
+                                <div class="input-group mb-4">
+                                    <span class="input-group-text">
+                                        <svg class="icon">
+                                            <use xlink:href="/node_modules/@coreui/icons/sprites/free.svg#cil-lock-locked"></use>
+                                        </svg>
+                                    </span>
+                                    <input class="form-control" type="password" name="confirm_password" placeholder="Repetir Contraseña" required>
+                                </div>
+                                <button class="btn btn-block btn-success" type="submit">Crear Cuenta</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <label>Contraseña:</label>
-            <input type="password" name="password" required>
-        </div>
-        <div>
-            <input type="submit" value="Registrarse">
-        </div>
-    </form>
+    </div>
+    <script src="/node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
+    <script src="/node_modules/simplebar/dist/simplebar.min.js"></script>
 </body>
 </html>
