@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería con NanoGallery2</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nanogallery2/3.0.0/css/nanogallery2.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>PhotoWall</title>
 </head>
 <body>
-    <h1>Galería de Imágenes</h1>
-
-    <form id="uploadForm">
-        <input type="file" id="imageInput" name="image" accept="image/*">
-        <button type="submit">Subir Imagen</button>
-    </form>
-
     <div id="nanogallery2"></div>
+    
+    <div class="bottom-bar">
+        <span>PhotoWall | Mango Morado</span>
+        <input type="file" id="imageInput" name="image" style="display: none;">
+        <button class="upload-btn" onclick="document.getElementById('imageInput').click();">
+            <span>+</span>
+        </button>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nanogallery2/3.0.0/jquery.nanogallery2.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
