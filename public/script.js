@@ -9,7 +9,7 @@ $(document).ready(function () {
         });
 
         nanogallery2.nanogallery2({
-            galleryMosaic: [                       
+            galleryMosaic: [
                 { w: 2, h: 2, c: 1, r: 1 },
                 { w: 1, h: 1, c: 3, r: 1 },
                 { w: 1, h: 1, c: 3, r: 2 },
@@ -22,9 +22,26 @@ $(document).ready(function () {
                 { w: 1, h: 1, c: 2, r: 4 },
                 { w: 2, h: 1, c: 3, r: 4 },
                 { w: 1, h: 1, c: 5, r: 4 },
-                { w: 1, h: 1, c: 6, r: 4 }
+                { w: 1, h: 1, c: 6, r: 4 },
+                // Nuevas columnas y filas ajustadas
+                { w: 1, h: 1, c: 7, r: 1 },
+                { w: 1, h: 1, c: 7, r: 2 },
+                { w: 1, h: 1, c: 8, r: 1 },
+                { w: 1, h: 1, c: 8, r: 2 },
+                { w: 1, h: 2, c: 9, r: 1 },
+                { w: 1, h: 1, c: 8, r: 3 },
+                { w: 1, h: 1, c: 9, r: 3 },
+                { w: 1, h: 1, c: 1, r: 5 },
+                { w: 1, h: 1, c: 2, r: 5 },
+                { w: 2, h: 1, c: 3, r: 5 },
+                { w: 1, h: 1, c: 5, r: 5 },
+                { w: 2, h: 1, c: 6, r: 5 },
+                { w: 1, h: 1, c: 8, r: 5 },
+                { w: 1, h: 1, c: 9, r: 5 },
+                { w: 1, h: 1, c: 4, r: 5 },  // Ajustar para eliminar espacios en blanco
+                { w: 1, h: 1, c: 7, r: 5 }  // Ajustar para eliminar espacios en blanco
             ],
-            galleryMosaicXS: [                     
+            galleryMosaicXS: [
                 { w: 2, h: 2, c: 1, r: 1 },
                 { w: 1, h: 1, c: 3, r: 1 },
                 { w: 1, h: 1, c: 3, r: 2 },
@@ -33,7 +50,7 @@ $(document).ready(function () {
                 { w: 1, h: 1, c: 2, r: 4 },
                 { w: 1, h: 1, c: 3, r: 4 }
             ],
-            galleryMosaicSM: [                     
+            galleryMosaicSM: [
                 { w: 2, h: 2, c: 1, r: 1 },
                 { w: 1, h: 1, c: 3, r: 1 },
                 { w: 1, h: 1, c: 3, r: 2 },
