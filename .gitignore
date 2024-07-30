@@ -6,8 +6,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Carpeta de subidas
-/uploads
+# Ignorar archivos dentro de la carpeta de subidas
+/uploads/*
+!/uploads/
 
 # Optional npm cache directory
 .npm
@@ -19,4 +20,4 @@ yarn-error.log*
 .DS_Store
 
 # Optional: Windows thumbnail cache files
-Thumbs.db
+Thumbs.db   

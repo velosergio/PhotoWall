@@ -1,40 +1,31 @@
 const express = require('express');
-const multer = require('multer');
+const session = require('express-session');
 const path = require('path');
-const fs = require('fs');
+const passport = require('./config/passport');
+const authRoutes = require('./routes/auth');
+const imageRoutes = require('./routes/image');
+const userRoutes = require('./routes/user');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Configurar almacenamiento de Multer
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'uploads/');
-    },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + path.extname(file.originalname));
-    }
-});
-
-const upload = multer({ storage });
-
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Ruta para cargar imágenes
-app.post('/upload', upload.single('image'), (req, res) => {
-    res.send('Imagen subida con éxito');
-});
+app.use(session({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: false
+}));
 
-// Ruta para obtener imágenes
-app.get('/images', (req, res) => {
-    fs.readdir('uploads/', (err, files) => {
-        if (err) {
-            return res.status(500).json({ error: 'No se pudieron cargar las imágenes' });
-        }
-        res.json(files);
-    });
-});
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use('/', authRoutes);
+app.use('/', imageRoutes);
+app.use('/', userRoutes);
 
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
