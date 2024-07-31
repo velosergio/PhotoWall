@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nanogallery2/3.0.0/css/nanogallery2.min.css">
     <link rel="stylesheet" href="styles.css">
     <title>PhotoWall</title>
+ 
 </head>
 <body>
     <div id="nanogallery2"></div>
@@ -13,13 +14,86 @@
     <div class="bottom-bar">
         <span>PhotoWall | Mango Morado</span>
         <input type="file" id="imageInput" name="image" style="display: none;">
-        <button class="upload-btn" onclick="document.getElementById('imageInput').click();">
+        <button class="upload-btn" onclick="openModal()">
             <span>+</span>
         </button>
     </div>
 
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="step active" id="step1">
+                <h2>Paso 1: Subir imagen</h2>
+                <input type="file" id="imageInputModal" name="image">
+                <button onclick="nextStep()">Siguiente</button>
+            </div>
+            <div class="step" id="step2">
+                <h2>Paso 2: Poner nombre y fecha de captura</h2>
+                <input type="text" id="imageName" placeholder="Nombre de la imagen">
+                <input type="date" id="imageDate">
+                <button onclick="prevStep()">Anterior</button>
+                <button onclick="nextStep()">Siguiente</button>
+            </div>
+            <div class="step" id="step3">
+                <h2>Paso 3: Vista previa y guardar</h2>
+                <div id="imagePreview"></div>
+                <button onclick="prevStep()">Anterior</button>
+                <button onclick="saveImage()">Guardar</button>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/nanogallery2/3.0.0/jquery.nanogallery2.min.js"></script>
-    <script src="script.js"></script>
+    <script>
+        let currentStep = 1;
+        
+        function openModal() {
+            document.getElementById('myModal').style.display = 'block';
+        }
+        
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+        
+        function nextStep() {
+            document.getElementById(`step${currentStep}`).classList.remove('active');
+            currentStep++;
+            document.getElementById(`step${currentStep}`).classList.add('active');
+        }
+        
+        function prevStep() {
+            document.getElementById(`step${currentStep}`).classList.remove('active');
+            currentStep--;
+            document.getElementById(`step${currentStep}`).classList.add('active');
+        }
+        
+        function saveImage() {
+            const imageName = document.getElementById('imageName').value;
+            const imageDate = document.getElementById('imageDate').value;
+            const imageFile = document.getElementById('imageInputModal').files[0];
+
+            if (imageName && imageDate && imageFile) {
+                // Aquí puedes manejar el guardado de la imagen y la metadata
+                console.log('Nombre de la imagen:', imageName);
+                console.log('Fecha de captura:', imageDate);
+                console.log('Archivo de imagen:', imageFile);
+
+                // Cerrar el modal después de guardar
+                closeModal();
+            } else {
+                alert('Por favor completa todos los campos.');
+            }
+        }
+
+        document.getElementById('imageInputModal').addEventListener('change', function(event) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('imagePreview').innerHTML = `<img src="${e.target.result}" alt="Vista previa" style="max-width: 100%;">`;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        });
+    </script>
 </body>
 </html>
