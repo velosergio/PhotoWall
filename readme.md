@@ -1,6 +1,6 @@
 # PhotoWall | Mango Morado
 
-ver 0.0.5
+ver 0.0.6
 
 PhotoWall es una aplicación web que permite a los usuarios subir y mostrar imágenes en una galería interactiva y dinámica utilizando NanoGallery2. La galería se presenta en un diseño tipo mosaico y cuenta con un botón flotante para facilitar la subida de nuevas imágenes.
 
@@ -12,6 +12,7 @@ PhotoWall es una aplicación web que permite a los usuarios subir y mostrar imá
 - Backend con Node.js y Express para manejar la carga y visualización de imágenes.
 - Autenticación de usuarios utilizando Passport.js.
 - Base de datos SQLite para almacenamiento de usuarios.
+- Dashboard de administración para gestión de usuarios.
 
 ## Requisitos
 
@@ -50,6 +51,8 @@ PhotoWall es una aplicación web que permite a los usuarios subir y mostrar imá
 
 3. Usa el botón flotante `+` en la esquina inferior derecha para seleccionar y subir imágenes. Las imágenes se mostrarán automáticamente en la galería tipo mosaico.
 
+4. Para acceder al dashboard de administración, navega a `http://localhost:3000/admin`. Debes estar autenticado para acceder a esta ruta.
+
 ## Estructura del Proyecto
 
 - `public/`
@@ -58,13 +61,21 @@ PhotoWall es una aplicación web que permite a los usuarios subir y mostrar imá
   - `script.js`: Lógica de JavaScript para manejar la galería y la subida de imágenes.
   - `login.html`: Página de inicio de sesión.
   - `register.html`: Página de registro de usuarios.
+  - `admin.html`: Página principal del dashboard de administración.
+  - `admin-users.html`: Página de gestión de usuarios en el dashboard de administración.
+  - `assets/js/`: Directorio para scripts JavaScript personalizados.
+    - `corefix.js`: Script para corregir funcionalidades de CoreUI.
+    - `admin-users.js`: Script para manejar la lógica de la página de gestión de usuarios.
 - `uploads/`: Directorio donde se almacenan las imágenes subidas.
 - `models/`
   - `user.js`: Configuración y creación de la tabla de usuarios.
 - `routes/`
   - `auth.js`: Rutas para autenticación de usuarios (login, register, logout).
   - `image.js`: Rutas para subir y listar imágenes.
-  - `user.js`: Ruta para obtener todos los usuarios registrados.
+  - `userRoutes.js`: Ruta para obtener todos los usuarios registrados.
+  - `adminRoutes.js`: Rutas para el dashboard de administración.
+  - `forgotPassword.js`: Rutas para restablecimiento de contraseñas.
+  - `resetPassword.js`: Rutas para actualizar contraseñas.
 - `config/`
   - `passport.js`: Configuración de Passport.js para autenticación.
 - `server.js`: Archivo del servidor Node.js para manejar las rutas de la aplicación.
@@ -79,6 +90,7 @@ PhotoWall es una aplicación web que permite a los usuarios subir y mostrar imá
 - [Passport.js](http://www.passportjs.org/) para la autenticación de usuarios.
 - [bcryptjs](https://github.com/dcodeIO/bcrypt.js) para el hashing de contraseñas.
 - [SQLite](https://www.sqlite.org/index.html) como base de datos.
+- [CoreUI](https://coreui.io/) para el dashboard de administración.
 
 ## Contribuciones
 

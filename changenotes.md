@@ -1,5 +1,31 @@
 # Changenotes
 
+## [Version 0.0.6] - 2024-07-30
+
+### Added
+- Implementación de la tabla de usuarios en `/admin/users` para listar los usuarios registrados
+- Scripts separados para manejar la lógica de carga de usuarios en `/public/assets/js/admin-users.js`
+- Redirección y lógica para asegurar que `/admin` redirija correctamente a `admin.html`
+- Funcionalidad de dropdown en la tabla de usuarios para las acciones de Info, Edit y Delete
+- Se creo la ruta assets para subir contenido de tipo CSS, JS y recursos graficos en public/
+- Se creo la ruta para la gestión de los usuarios en el archivo ´userRoutes.js´
+- Se creo la ruta para la gestión del panel administrativo en el archivo ´adminRoutes.js
+- Se agregaron las dependencias:
+    - @coreui/chartjs
+    - @coreui/coreui
+    - @coreui/icons
+    - @coreui/utils
+    - chart.js
+    - simplebar
+
+### Changed
+- Modificación del archivo `adminRoutes.js` para incluir las rutas correctas para `/admin` y `/admin/users`
+- Actualización de `admin.html` y `admin-users.html` para incluir correctamente las rutas de los archivos JavaScript y CSS necesarios
+
+### Fixed
+- Problema de superposición del dropdown en la tabla de usuarios
+- Error de ruta no encontrada para `/admin`
+
 ## [Version 0.0.5] - 2024-07-30
 
 ### Added

@@ -18,10 +18,13 @@
   },
   "homepage": "https://github.com/velosergio/PhotoWall#readme",
   "dependencies": {
+    "@coreui/chartjs": "^4.0.0",
     "@coreui/coreui": "^5.1.0",
     "@coreui/icons": "^3.0.1",
+    "@coreui/utils": "^2.0.2",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.3",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
     "fs": "^0.0.2",
@@ -32,6 +35,7 @@
     "path": "^0.12.7",
     "react-router-dom": "^6.25.1",
     "sharp": "^0.33.4",
+    "simplebar": "^6.2.7",
     "sqlite3": "^5.1.7"
   }
 }
